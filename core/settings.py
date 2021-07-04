@@ -26,7 +26,7 @@ SECRET_KEY = 'sxk2fbp&&kh9txcv(5jb!)9^p#2#xx+v8jen5wl8ekx*xg&z44'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["django-react-chatroom.herokuapp.com", '127.0.0.1:8000']
 
 
 # Application definition
