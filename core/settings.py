@@ -124,9 +124,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-# Development:
+ASGI_APPLICATION = "core.routing.application"
 
-# ASGI_APPLICATION = "core.routing.application"
+# Development:
 # # When scaling should be changed to Redis
 # CHANNEL_LAYERS = {
 #         'default': {
@@ -135,3 +135,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # }
 
 # Deployment:
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
+    },
+}
