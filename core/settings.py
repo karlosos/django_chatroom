@@ -26,7 +26,8 @@ SECRET_KEY = 'sxk2fbp&&kh9txcv(5jb!)9^p#2#xx+v8jen5wl8ekx*xg&z44'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django-react-chatroom.herokuapp.com", '127.0.0.1:8000']
+# ALLOWED_HOSTS = ["django-react-chatroom.herokuapp.com", '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -128,18 +129,18 @@ ASGI_APPLICATION = "core.routing.application"
 
 # Development:
 # # When scaling should be changed to Redis
-# CHANNEL_LAYERS = {
-#         'default': {
-#             "BACKEND": "channels.layers.InMemoryChannelLayer"
-#         }
-# }
+CHANNEL_LAYERS = {
+        'default': {
+            "BACKEND": "channels.layers.InMemoryChannelLayer"
+        }
+}
 
 # Deployment:
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
-        },
-    },
-}
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+#         },
+#     },
+# }
