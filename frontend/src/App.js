@@ -12,22 +12,38 @@ class App extends Component {
     this.state = {
       isLoggedIn: false,
       messages: [],
-      value: '',
+      message: '',
       name: '',
       room: 'vacad'
     }
     this.client = new W3CWebSocket('ws://127.0.0.1:8000/ws/chat/' + this.state.room + '/')
     // client = new W3CWebSocket('ws://django-react-chatroom.herokuapp.com/ws/chat/' + this.state.room + '/');
+  }
 
-    this.onButtonClicked = (e) => {
-      this.client.send(JSON.stringify({
-        type: 'message',
-        message: this.state.value,
-        name: this.state.name
-      }))
-      this.state.value = ''
-      e.preventDefault()
-    }
+  onButtonClicked = (e) => {
+    e.preventDefault()
+    this.client.send(JSON.stringify({
+      type: 'message',
+      message: this.state.message,
+      name: this.state.name
+    }))
+    this.handleMessageChange('')
+  }
+
+  handleLoginChange = (flag) => {
+    this.setState({ isLoggedIn: flag })
+  }
+
+  handleRoomChange = (value) => {
+    this.setState({ room: value })
+  }
+
+  handleNameChange = (value) => {
+    this.setState({ name: value })
+  }
+
+  handleMessageChange = (value) => {
+    this.setState({ message: value })
   }
 
   componentDidMount () {
@@ -52,12 +68,21 @@ class App extends Component {
   }
 
   render () {
-    const { classes } = this.props
     return (
       <Container component='main' maxWidth='xs'>
         {this.state.isLoggedIn
-          ? <Chatroom state={this.state} setState={this.setState} onButtonClicked={this.onButtonClicked} /> 
-          : <Login state={this.state} setState={this.setState} onButtonClicked={this.onButtonClicked} /> }
+          ? <Chatroom 
+            state={this.state} 
+            onButtonClicked={this.onButtonClicked} 
+            handleMessageChange={this.handleMessageChange}
+          /> 
+          : <Login 
+            state={this.state} 
+            handleRoomChange={this.handleRoomChange} 
+            handleNameChange={this.handleNameChange} 
+            handleLoginChange={this.handleLoginChange} 
+            onButtonClicked={this.onButtonClicked} 
+          /> }
       </Container>
     )
   }
