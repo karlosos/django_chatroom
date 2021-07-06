@@ -31,7 +31,7 @@ const styles = theme => ({
 })
 
 const Login = (props) => {
-  const { classes, state, handleRoomChange, handleNameChange, handleLoginChange } = props
+  const { classes, state, onRoomChange, onNameChange, onLoginChange } = props
 
   return (
     <div>
@@ -40,7 +40,7 @@ const Login = (props) => {
         <Typography component='h1' variant='h5'>
           ChattyRooms
         </Typography>
-        <form className={classes.form} noValidate onSubmit={e => { e.preventDefault(); handleLoginChange(true) }}>
+        <form className={classes.form} noValidate onSubmit={e => { e.preventDefault(); onLoginChange(true) }}>
           <TextField
             variant='outlined'
             margin='normal'
@@ -52,7 +52,7 @@ const Login = (props) => {
             autoFocus
             value={state.room}
             onChange={e => {
-              handleRoomChange(e.target.value)
+              onRoomChange(e.target.value)
               // this.value = state.room
             }}
           />
@@ -67,7 +67,7 @@ const Login = (props) => {
             id='Username'
             value={state.name}
             onChange={e => {
-              handleNameChange(e.target.value)
+              onNameChange(e.target.value)
             }}
           />
           <Button

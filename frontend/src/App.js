@@ -20,7 +20,7 @@ class App extends Component {
     // client = new W3CWebSocket('ws://django-react-chatroom.herokuapp.com/ws/chat/' + this.state.room + '/');
   }
 
-  onButtonClicked = (e) => {
+  handleButtonClicked = (e) => {
     e.preventDefault()
     this.client.send(JSON.stringify({
       type: 'message',
@@ -71,18 +71,17 @@ class App extends Component {
     return (
       <Container component='main' maxWidth='xs'>
         {this.state.isLoggedIn
-          ? <Chatroom 
-            state={this.state} 
-            onButtonClicked={this.onButtonClicked} 
-            handleMessageChange={this.handleMessageChange}
-          /> 
-          : <Login 
-            state={this.state} 
-            handleRoomChange={this.handleRoomChange} 
-            handleNameChange={this.handleNameChange} 
-            handleLoginChange={this.handleLoginChange} 
-            onButtonClicked={this.onButtonClicked} 
-          /> }
+          ? <Chatroom
+              state={this.state}
+              onButtonClicked={this.handleButtonClicked}
+              onMessageChange={this.handleMessageChange}
+            />
+          : <Login
+              state={this.state}
+              onRoomChange={this.handleRoomChange}
+              onNameChange={this.handleNameChange}
+              onLoginChange={this.handleLoginChange}
+            />}
       </Container>
     )
   }

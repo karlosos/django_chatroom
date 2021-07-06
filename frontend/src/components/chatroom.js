@@ -38,19 +38,21 @@ const Chatroom = (props) => {
     <div style={{ marginTop: 50 }}>
       Room Name: {state.room}
       <Paper style={{ height: 500, maxHeight: 500, overflow: 'auto', boxShadow: 'none' }}>
-        {state.messages.map(message => <>
-          <Card className={classes.root}>
-            <CardHeader
-              avatar={
-                <Avatar className={classes.avatar}>
-                  R
-                </Avatar>
+        {state.messages.map(message =>
+          <React.Fragment key={1}>
+            <Card className={classes.root}>
+              <CardHeader
+                avatar={
+                  <Avatar className={classes.avatar}>
+                    R
+                  </Avatar>
                     }
-              title={message.name}
-              subheader={message.msg}
-            />
-          </Card>
-                                       </>)}
+                title={message.name}
+                subheader={message.msg}
+              />
+            </Card>
+          </React.Fragment>
+        )}
       </Paper>
 
       <form className={classes.form} noValidate onSubmit={e => onButtonClicked(e)}>
