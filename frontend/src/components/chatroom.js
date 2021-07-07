@@ -33,7 +33,7 @@ const styles = theme => ({
 })
 
 const Chatroom = (props) => {
-  const { classes, state, onButtonClicked, handleMessageChange } = props
+  const { classes, state, onButtonClicked, onMessageChange } = props
   return (
     <div style={{ marginTop: 50 }}>
       Room Name: {state.room}
@@ -64,7 +64,7 @@ const Chatroom = (props) => {
           value={state.message}
           fullWidth
           onChange={e => {
-            handleMessageChange(e.target.value)
+            onMessageChange(e.target.value)
           }}
         />
         <Button

@@ -2,7 +2,6 @@ import React from 'react'
 
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 
 import { withStyles } from '@material-ui/core/styles'
@@ -23,10 +22,58 @@ const styles = theme => ({
     marginTop: theme.spacing(1)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
+    margin: theme.spacing(3, 0, 2),
+    backgroundColor: "#0069FE",
+    color: "#FCFCFC",
+    borderRadius: "60px",
+    width: "390px",
   },
   root: {
     boxShadow: 'none'
+  },
+  roomInput: {
+    backgroundColor: "#F7F7F7",
+    border: "1px solid #E3E3E3",
+    borderRadius: "20px 20px 0px 0px",
+    width: "100%",
+    zIndex: '3',
+    position: 'relative',
+    padding: "18.5px 24px",
+    '&:hover': {
+      borderColor: "#AEAEAE",
+      zIndex: '5',
+      transition: '0.3s',
+    },
+    '&:focus': {
+      outline: 'none',
+      borderColor: "#0069FE",
+      zIndex: '10',
+      transition: '0.3s',
+    },
+    color: '#2D2D2D',
+  },
+  nameInput: {
+    marginTop: "-1px",
+    backgroundColor: "#F7F7F7",
+    border: "1px solid #E3E3E3",
+    // borderTop: "0px",
+    borderRadius: "0px 0px 20px 20px",
+    width: "100%",
+    zIndex: '3',
+    position: 'relative',
+    padding: "18.5px 24px",
+    '&:hover': {
+      borderColor: "#AEAEAE",
+      zIndex: '3',
+      transition: '0.3s',
+    },
+    '&:focus': {
+      outline: 'none',
+      borderColor: "#0069FE",
+      zIndex: '10',
+      transition: '0.3s',
+    },
+    color: '#2D2D2D',
   }
 })
 
@@ -41,35 +88,14 @@ const Login = (props) => {
           ChattyRooms
         </Typography>
         <form className={classes.form} noValidate onSubmit={e => { e.preventDefault(); onLoginChange(true) }}>
-          <TextField
-            variant='outlined'
-            margin='normal'
-            required
-            fullWidth
-            id='email'
-            label='Chatroom Name'
-            name='Chatroom Name'
-            autoFocus
-            value={state.room}
-            onChange={e => {
-              onRoomChange(e.target.value)
-              // this.value = state.room
-            }}
-          />
-          <TextField
-            variant='outlined'
-            margin='normal'
-            required
-            fullWidth
-            name='Username'
-            label='Username'
-            type='Username'
-            id='Username'
-            value={state.name}
-            onChange={e => {
-              onNameChange(e.target.value)
-            }}
-          />
+          <input className={classes.roomInput} type="text" id="room" name="room" placeholder={"Chat name"} value={state.room} autoFocus onChange={ e => {
+            onRoomChange(e.target.value)
+          }} />
+
+          <input className={classes.nameInput} type="text" id="room" name="room" placeholder={"Your name"} value={state.name} onChange={ e => {
+            onNameChange(e.target.value)
+          }} />
+
           <Button
             type='submit'
             fullWidth
@@ -77,7 +103,7 @@ const Login = (props) => {
             color='primary'
             className={classes.submit}
           >
-            Start Chatting
+            Enter the chatroom 
           </Button>
         </form>
       </div>

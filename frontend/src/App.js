@@ -14,7 +14,7 @@ class App extends Component {
       messages: [],
       message: '',
       name: '',
-      room: 'vacad'
+      room: 'default'
     }
     this.client = new W3CWebSocket('ws://127.0.0.1:8000/ws/chat/' + this.state.room + '/')
     // client = new W3CWebSocket('ws://django-react-chatroom.herokuapp.com/ws/chat/' + this.state.room + '/');
