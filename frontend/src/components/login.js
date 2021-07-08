@@ -6,17 +6,25 @@ import Typography from '@material-ui/core/Typography'
 
 import { withStyles } from '@material-ui/core/styles'
 
+import { ReactComponent as BlobUpper } from './blobUpper.svg';
+import { ReactComponent as BlobLower } from './blobLower.svg';
+
 const styles = theme => ({
   title: {
     color: '#2D2D2D',
     fontSize: '36px',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginTop: '-350px',
   },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    background: 'linear-gradient(180deg, #F9F9F9 0%, #FFFFFF 13.54%)',
+    padding: '0px 24px',
+    borderRadius: '20px',
+    overflow: 'hidden',
   },
   avatar: {
     margin: theme.spacing(1),
@@ -36,7 +44,8 @@ const styles = theme => ({
     color: '#FCFCFC',
     borderRadius: '60px',
     margin: '0 auto',
-    padding: '20px 40px',
+    marginBottom: '25px',
+    padding: '20px 50px',
     textTransform: 'none',
     fontWeight: 'bold',
     '&:hover': {
@@ -65,7 +74,8 @@ const styles = theme => ({
       zIndex: '10',
       transition: '0.3s'
     },
-    color: '#2D2D2D'
+    color: '#2D2D2D',
+    marginTop: '130px',
   },
   nameInput: {
     marginTop: '-1px',
@@ -98,18 +108,19 @@ const Login = (props) => {
     <div>
       <CssBaseline />
       <div className={classes.paper}>
+        <BlobUpper />
         <Typography component='h1' variant='h5' className={classes.title}>
           React+Django Chatrooms
         </Typography>
         <form className={classes.form} noValidate onSubmit={e => { e.preventDefault(); onLoginChange(true) }}>
           <input
-            className={classes.roomInput} type='text' id='room' name='room' placeholder='Chat name' value={state.room} autoFocus onChange={e => {
+            className={classes.roomInput} autocomplete="off" type='text' id='room' name='room' placeholder='Chat name' value={state.room} autoFocus onChange={e => {
               onRoomChange(e.target.value)
             }}
           />
 
           <input
-            className={classes.nameInput} type='text' id='room' name='room' placeholder='Your name' value={state.name} onChange={e => {
+            className={classes.nameInput} autocomplete="off" type='text' id='name' name='name' placeholder='Your name' value={state.name} onChange={e => {
               onNameChange(e.target.value)
             }}
           />
@@ -124,6 +135,7 @@ const Login = (props) => {
               Enter the chatroom
             </Button>
           </div>
+          <BlobLower style={{marginBottom: '-5px'}}/>
         </form>
       </div>
     </div>
