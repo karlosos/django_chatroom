@@ -13,6 +13,8 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
             self.channel_name
         )
 
+        print("Channel name:", self.channel_name)
+
         await self.accept()
 
 
