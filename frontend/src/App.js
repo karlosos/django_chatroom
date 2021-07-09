@@ -14,10 +14,9 @@ class App extends Component {
       messages: [],
       message: '',
       name: '',
-      room: 'default'
+      room: '#default'
     }
-    this.client = new W3CWebSocket('ws://127.0.0.1:8000/ws/chat/' + this.state.room + '/')
-    // client = new W3CWebSocket('ws://django-react-chatroom.herokuapp.com/ws/chat/' + this.state.room + '/');
+    this.client = null
   }
 
   handleButtonClicked = (e) => {
@@ -31,6 +30,29 @@ class App extends Component {
   }
 
   handleLoginChange = (flag) => {
+    // Connect to WebSocket
+    if (flag == true) {
+      const roomName = this.state.room.substring(1)
+      this.client = new W3CWebSocket('ws://127.0.0.1:8000/ws/chat/' + roomName + '/')
+      this.client.onopen = () => {
+        console.log('WebSocket Client Connected')
+      }
+      this.client.onmessage = (message) => {
+        const dataFromServer = JSON.parse(message.data)
+        console.log('got reply! ', dataFromServer.type)
+        if (dataFromServer) {
+          this.setState((state) =>
+            ({
+              messages: [...state.messages,
+                {
+                  msg: dataFromServer.message,
+                  name: dataFromServer.name
+                }]
+            })
+          )
+        }
+      }
+    }
     this.setState({ isLoggedIn: flag })
   }
 
@@ -47,27 +69,6 @@ class App extends Component {
 
   handleMessageChange = (value) => {
     this.setState({ message: value })
-  }
-
-  componentDidMount () {
-    this.client.onopen = () => {
-      console.log('WebSocket Client Connected')
-    }
-    this.client.onmessage = (message) => {
-      const dataFromServer = JSON.parse(message.data)
-      console.log('got reply! ', dataFromServer.type)
-      if (dataFromServer) {
-        this.setState((state) =>
-          ({
-            messages: [...state.messages,
-              {
-                msg: dataFromServer.message,
-                name: dataFromServer.name
-              }]
-          })
-        )
-      }
-    }
   }
 
   render () {
