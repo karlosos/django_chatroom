@@ -31,7 +31,7 @@ class App extends Component {
 
   handleLoginChange = (flag) => {
     // Connect to WebSocket
-    if (flag == true) {
+    if (flag === true) {
       const roomName = this.state.room.substring(1)
       this.client = new W3CWebSocket('ws://127.0.0.1:8000/ws/chat/' + roomName + '/')
       this.client.onopen = () => {

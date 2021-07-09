@@ -45,6 +45,7 @@
     "standard": "^16.0.3"
   },
   "standard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "env": [ "jest" ]
   }
 }

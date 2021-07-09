@@ -53,7 +53,7 @@ Currently, `.env` file in the `frontend` directory is used to defining the host 
 
 ## Deployment
 
-Currently, it is not deployed on the web. I'll probably explore the possibility of deploying it on Heroku althhough I don't think it will be easy as I'm using WebSockets (Daphne would be required).
+Currently, it is not deployed on the web. I'll probably explore the possibility of deploying it on Heroku althhough I don't think it will be straighforward as I'm using WebSockets (Daphne would be required).
 
 ## Technical Decisions
 

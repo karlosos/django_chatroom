@@ -115,13 +115,13 @@ const Login = (props) => {
         </Typography>
         <form className={classes.form} noValidate onSubmit={e => { e.preventDefault(); onLoginChange(true) }}>
           <input
-            className={classes.roomInput} autocomplete='off' type='text' id='room' name='room' placeholder='Chat name' value={state.room} autoFocus onChange={e => {
+            className={classes.roomInput} autoComplete='off' type='text' id='room' name='room' placeholder='Chat name' value={state.room} autoFocus onChange={e => {
               onRoomChange(e.target.value)
             }}
           />
 
           <input
-            className={classes.nameInput} autocomplete='off' type='text' id='name' name='name' placeholder='Your name' value={state.name} onChange={e => {
+            className={classes.nameInput} autoComplete='off' type='text' id='name' name='name' placeholder='Your name' value={state.name} onChange={e => {
               onNameChange(e.target.value)
             }}
           />
