@@ -7,15 +7,15 @@ import Paper from '@material-ui/core/Paper'
 
 import { withStyles } from '@material-ui/core/styles'
 
-import { ReactComponent as BlobUpper } from './blobUpper.svg';
-import { ReactComponent as BlobLower } from './blobLower.svg';
+import { ReactComponent as BlobUpper } from './blobUpper.svg'
+import { ReactComponent as BlobLower } from './blobLower.svg'
 
 const styles = theme => ({
   title: {
     color: '#2D2D2D',
     fontSize: '36px',
     fontWeight: 'bold',
-    marginTop: '-350px',
+    marginTop: '-350px'
   },
   paper: {
     marginTop: theme.spacing(8),
@@ -25,7 +25,7 @@ const styles = theme => ({
     background: 'linear-gradient(180deg, #F9F9F9 0%, #FFFFFF 13.54%)',
     padding: '0px 24px',
     borderRadius: '20px',
-    overflow: 'hidden',
+    overflow: 'hidden'
   },
   avatar: {
     margin: theme.spacing(1),
@@ -76,7 +76,7 @@ const styles = theme => ({
       transition: '0.3s'
     },
     color: '#2D2D2D',
-    marginTop: '130px',
+    marginTop: '130px'
   },
   nameInput: {
     marginTop: '-1px',
@@ -115,13 +115,13 @@ const Login = (props) => {
         </Typography>
         <form className={classes.form} noValidate onSubmit={e => { e.preventDefault(); onLoginChange(true) }}>
           <input
-            className={classes.roomInput} autocomplete="off" type='text' id='room' name='room' placeholder='Chat name' value={state.room} autoFocus onChange={e => {
+            className={classes.roomInput} autocomplete='off' type='text' id='room' name='room' placeholder='Chat name' value={state.room} autoFocus onChange={e => {
               onRoomChange(e.target.value)
             }}
           />
 
           <input
-            className={classes.nameInput} autocomplete="off" type='text' id='name' name='name' placeholder='Your name' value={state.name} onChange={e => {
+            className={classes.nameInput} autocomplete='off' type='text' id='name' name='name' placeholder='Your name' value={state.name} onChange={e => {
               onNameChange(e.target.value)
             }}
           />
@@ -136,7 +136,7 @@ const Login = (props) => {
               Enter the chatroom
             </Button>
           </div>
-          <BlobLower style={{marginBottom: '-5px'}}/>
+          <BlobLower style={{ marginBottom: '-5px' }} />
         </form>
       </Paper>
     </div>

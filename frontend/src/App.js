@@ -35,8 +35,8 @@ class App extends Component {
   }
 
   handleRoomChange = (value) => {
-    if(value.charAt(0) != '#') {
-      value = "#" + value
+    if (value.charAt(0) !== '#') {
+      value = '#' + value
     }
     this.setState({ room: value })
   }
