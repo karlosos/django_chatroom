@@ -3,6 +3,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper'
 
 import { withStyles } from '@material-ui/core/styles'
 
@@ -107,7 +108,7 @@ const Login = (props) => {
   return (
     <div>
       <CssBaseline />
-      <div className={classes.paper}>
+      <Paper className={classes.paper}>
         <BlobUpper />
         <Typography component='h1' variant='h5' className={classes.title}>
           React+Django Chatrooms
@@ -137,7 +138,7 @@ const Login = (props) => {
           </div>
           <BlobLower style={{marginBottom: '-5px'}}/>
         </form>
-      </div>
+      </Paper>
     </div>
   )
 }
