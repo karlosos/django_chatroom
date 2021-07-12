@@ -9,6 +9,15 @@
 
 <h4 align="center">Chat Application with Django and React</h4>
 
+<center>
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Code style: black](https://img.shields.io/badge/code%20style-standardjs-F3DF49.svg)](https://standardjs.com/)
+[![Node.js CI](https://github.com/karlosos/django_chatroom/actions/workflows/node.js.yml/badge.svg)](https://github.com/karlosos/django_chatroom/actions/workflows/node.js.yml)
+[![Django CI/CD Workflow](https://github.com/karlosos/django_chatroom/actions/workflows/django.yml/badge.svg)](https://github.com/karlosos/django_chatroom/actions/workflows/django.yml)
+
+</center>
+
 <p align="center">
   <a href="#about">About</a> •
   <a href="#what-i-have-learned">What I Have Learned</a> •
