@@ -1,5 +1,8 @@
 <p align="center">
-    <img src="https://www.saaspegasus.com/static/images/web/modern-javascript/django-react-header.png" width="600px" alt="logo"/>
+    <img src="./docs/top2.png" width="600px" alt="logo"/>
+</p>
+<p align="center" style="margin-top: -20px">
+    <img src="https://www.saaspegasus.com/static/images/web/modern-javascript/django-react-header.png" width="200px" alt="logo"/>
 </p>
 
 ***
@@ -16,7 +19,9 @@
 
 ## About
 
-This is a simple chat application that uses Django (with Channels) as a backend and React as a frontend.
+This is a simple chat application that uses Django (with Channels) as a backend and React as a frontend. 
+
+**Goal of this project**: This was my introduction project to Channels (WebSockets). 
 
 ## What I Have Learned
 
@@ -57,5 +62,17 @@ Currently, it is not deployed on the web. I'll probably explore the possibility 
 
 ## Technical Decisions
 
-1. **One repository two projects**: TODO
-1. **No docker**: TODO
+1. **One repository two projects**: as it was only learning purpose project I thought the monorepo structure would be good enough.
+1. **No docker**: didn't need it.
+1. **No tests**: I have not written tests here as it was not the goal of the project. If you want to check how i write tests look at [react-django-todoist](https://github.com/karlosos/react-django-todoist) or [react-fastify-smarthome](https://github.com/karlosos/react-fastify-smarthome). Channels has a good documentation on testing. It can be accessed [here](https://channels.readthedocs.io/en/stable/topics/testing.html#).
+
+## Screenshots
+
+
+<p align="center">
+    <img src="./docs/split.png" width="500px" alt="logo"/>
+</p>
+
+<p align="center">
+    <img src="./docs/anim.gif" width="500px" alt="logo"/>
+</p>
