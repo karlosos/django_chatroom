@@ -5,18 +5,18 @@
     <img src="https://www.saaspegasus.com/static/images/web/modern-javascript/django-react-header.png" width="200px" alt="logo"/>
 </p>
 
-***
-
-<h4 align="center">Chat Application with Django and React</h4>
-
-<center>
+<div align="center">
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Code style: black](https://img.shields.io/badge/code%20style-standardjs-F3DF49.svg)](https://standardjs.com/)
 [![Node.js CI](https://github.com/karlosos/django_chatroom/actions/workflows/node.js.yml/badge.svg)](https://github.com/karlosos/django_chatroom/actions/workflows/node.js.yml)
-[![Django CI/CD Workflow](https://github.com/karlosos/django_chatroom/actions/workflows/django.yml/badge.svg)](https://github.com/karlosos/django_chatroom/actions/workflows/django.yml)
+[![Django CI/CD Workflow](https://github.com/karlosos/django_chatroom/actions/workflows/django.yml/badge.svg?branch=master)](https://github.com/karlosos/django_chatroom/actions/workflows/django.yml)
+</div>
 
-</center>
+***
+
+<h4 align="center">Chat Application with Django and React</h4>
+
 
 <p align="center">
   <a href="#about">About</a> •
